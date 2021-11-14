@@ -1,0 +1,13 @@
+<div class="container" fxLayout="column" fxLayoutgap="10px">
+
+    <mat-grid-list cols="2" rowHeight="200px">
+        <mat-grid-tile *ngFor="let dish of dishes" (click)="onSelect(dish)">
+            <img src={{dish.image}} alt={{dish.name}}>
+        <mat-grid-tile-footer>
+            <h1 matLine>{{dish.name | uppercase}}</h1>
+        </mat-grid-tile-footer>      
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <app-dishselect [dishselected]="selectedDish"></app-dishselect>
+</div>
