@@ -11,6 +11,7 @@ import {MatCardModule} from '@angular/material/card';
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
 import { DishselectComponent } from './dishselect/dishselect.component';
+import { DishService } from './services/dish.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { DishselectComponent } from './dishselect/dishselect.component';
     MatGridListModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    DishService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
