@@ -1,1 +1,28 @@
-<p>home works!</p>
+<div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px">
+    <mat-card *ngIf="dis" fxFlex>
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+                <h3>{{dis.name | uppercase}}</h3>
+            </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{dis.image}} alt={{dis.name}}>
+        <mat-card-content>
+            <p>{{dis.description}}</p>
+        </mat-card-content>
+
+    </mat-card>
+
+    <mat-card *ngIf="promo" fxFlex>
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>
+                <h3>{{promo.name | uppercase}}</h3>
+            </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{promo.image}} alt={{promo.name}}>
+        <mat-card-content>
+            <p>{{promo.description}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>
