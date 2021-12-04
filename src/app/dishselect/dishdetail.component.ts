@@ -7,20 +7,34 @@ import { Location } from '@angular/common';
 import { DishService } from '../services/dish.service';
 
 
+
+
+
+
 @Component({
-  selector: 'app-dishselect',
-  templateUrl: './dishselect.component.html',
-  styleUrls: ['./dishselect.component.scss']
+  selector: 'app-dishdetail',
+  templateUrl: './dishdetail.component.html',
+  styleUrls: ['./dishdetail.component.scss']
 })
-export class DishselectComponent implements OnInit {
+
+
+export class DishdetailComponent implements OnInit {
 
  dishselected: Dish;
+
+ 
+ 
 
   constructor(private dishservice:DishService, private location: Location, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    
+    
+  
     let id=this.route.snapshot.params['id'];   // to hold id
     this.dishselected=this.dishservice.getDish(id);
+   
+    
   }
 
   goBack(){

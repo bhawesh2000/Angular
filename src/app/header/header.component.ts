@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+//to trigger the Dialog view of the Login component  import MatDialog and MatDialogRef and logincomponent
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  loginForm()
+  {
+    this.dialog.open(LoginComponent, {width:'500px', height: '450px'})
   }
 
 }
