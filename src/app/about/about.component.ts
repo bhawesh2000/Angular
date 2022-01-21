@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
   constructor(private ledser:LeaderService) { }
 
   ngOnInit(): void {
-    this.leader=this.ledser.getLeaders();
+    this.ledser.getLeaders().then((leadr)=>this.leader=leadr);
   }
 
 }

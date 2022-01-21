@@ -22,8 +22,16 @@ export class MenuComponent implements OnInit {
    }
 
   ngOnInit(): void {
+/*
+    this.dishes=this.dishser.getDishes(); //As getDishes() method is returning a Promise and promise is being assigned to dish array object
+                                            this is not correct we will reconfigure this code, we implement then and catch
+ */
 
-    this.dishes=this.dishser.getDishes();
+    /*
+    this.dishser.getDishes()
+    .then((dis)=>this.dishes=dis); // (dis) inside then method i receive dishes object comming in when promise resolves  
+    */
+   this.dishser.getDishes().subscribe((dis)=>this.dishes=dis);
   }
 
   onSelect(dish: Dish)

@@ -1,40 +1,60 @@
 <div class="container" fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="10px">
-    <mat-card *ngIf="dis" fxFlex>
-        <mat-card-header>
-            <div mat-card-avatar></div>
-            <mat-card-title>
-                <h3>{{dis.name | uppercase}}</h3>
-            </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src={{dis.image}} alt={{dis.name}}>
-        <mat-card-content>
-            <p>{{dis.description}}</p>
-        </mat-card-content>
+    
+    <div fxFlex *ngIf="dis">
+        <mat-card *ngIf="dis" >
+            <mat-card-header>
+                <div mat-card-avatar></div>
+                <mat-card-title>
+                    <h3>{{dis.name | uppercase}}</h3>
+                </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src={{dis.image}} alt={{dis.name}}>
+            <mat-card-content>
+                <p>{{dis.description}}</p>
+            </mat-card-content>
+    
+        </mat-card>
+    </div>
 
-    </mat-card>
+    <div fxflex [hidden]="dis">
+    <mat-spinner></mat-spinner><h4>Loading....Please wait</h4>
+    </div>
 
-    <mat-card *ngIf="promo" fxFlex>
-        <mat-card-header>
-            <div mat-card-avatar></div>
-            <mat-card-title>
-                <h3>{{promo.name | uppercase}}</h3>
-            </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src={{promo.image}} alt={{promo.name}}>
-        <mat-card-content>
-            <p>{{promo.description}}</p>
-        </mat-card-content>
-    </mat-card>
+    <div *ngIf="promo" fxFlex>
+        <mat-card >
+            <mat-card-header>
+                <div mat-card-avatar></div>
+                <mat-card-title>
+                    <h3>{{promo.name | uppercase}}</h3>
+                </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src={{promo.image}} alt={{promo.name}}>
+            <mat-card-content>
+                <p>{{promo.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
 
-    <mat-card *ngIf="lead" fxFlex>
-        <mat-card-header>
-            <mat-card-title>
-                <h3>{{lead.name | uppercase}}</h3>
-            </mat-card-title>
-        </mat-card-header>
-        <img mat-card-image src="{{lead.image}}" alt="{{lead.name}}">
-        <mat-card-content>
-            <p>{{lead.description}}</p>
-        </mat-card-content>
-    </mat-card>
+    <div fxflex [hidden]="promo">
+        <mat-spinner></mat-spinner><h4>Loading....Please wait</h4>
+    </div>
+
+    <div *ngIf="lead" fxFlex>
+        <mat-card >
+            <mat-card-header>
+                <mat-card-title>
+                    <h3>{{lead.name | uppercase}}</h3>
+                </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{lead.image}}" alt="{{lead.name}}">
+            <mat-card-content>
+                <p>{{lead.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div fxflex [hidden]="lead">
+        <mat-spinner></mat-spinner><h4>Loading....Please wait</h4>
+    </div>
+
 </div>

@@ -4,3 +4,5 @@ export class comment{
     author: string;
     date: string;  
 }
+
+export const Rating= ["1","2","3","4","5"];

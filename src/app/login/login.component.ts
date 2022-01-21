@@ -11,14 +11,14 @@ export class LoginComponent implements OnInit {
 
   user = { username:'', password:'', remember: false };
 
-  constructor(public dialogref:MatDialogRef<LoginComponent>) { }
+  constructor(public dialogRef:MatDialogRef<LoginComponent>) { }
 
   ngOnInit(): void {
   }
   onSubmit()
   {
     console.log('user:',this.user);
-    this.dialogref.close();          //after form submitted dialog is closed automatically
+    this.dialogRef.close();          //after form submitted dialog is closed automatically
   }
 
 }

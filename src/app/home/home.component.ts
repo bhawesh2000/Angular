@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.dis=this.dser.getFeaturedDish();
-    this.promo=this.promoser.getFeaturedPromotion();
-    this.lead=this.leadser.getFeaturedLeader();
+    this.dser.getFeaturedDish().subscribe(dis=>this.dis=dis);
+    this.promoser.getFeaturedPromotion().then((promot)=>this.promo=promot);
+    this.leadser.getFeaturedLeader().then((leadr)=>this.lead=leadr);
   }
 
 }
